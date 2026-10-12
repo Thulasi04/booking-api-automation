@@ -1,6 +1,5 @@
 import pytest
 
-
 @pytest.mark.auth
 def test_valid_login_returns_token(api_context):
     response = api_context.post(
@@ -12,7 +11,6 @@ def test_valid_login_returns_token(api_context):
     assert "token" in body
     assert body["token"]
 
-
 @pytest.mark.auth
 @pytest.mark.negative
 def test_invalid_login_does_not_return_token(api_context):
@@ -21,7 +19,6 @@ def test_invalid_login_does_not_return_token(api_context):
         data={"username": "wrong_user", "password": "wrong_password"}
     )
 
-    # RESTful Booker may return HTTP 200 with a failure reason.
     assert response.status in (200, 400, 401)
     body = response.json()
     assert not body.get("token")
