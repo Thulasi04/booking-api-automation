@@ -44,16 +44,4 @@ The RESTful Booker API supports the following operations:
 
 The actual automated coverage depends on the test cases implemented in this repository.
 
-## Project Structure
-
-```text
-booking-api-automation/
-├── tests/
-│   ├── conftest.py
-│   └── test_booking_api.py
-├── requirements.txt
-├── pytest.ini
-├── .gitignore
-└── README.md
-```
 
