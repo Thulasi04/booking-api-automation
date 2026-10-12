@@ -32,5 +32,4 @@ def test_login_response_is_json(api_context):
         "/auth",
         data={"username": "admin", "password": "password123"}
     )
-
     assert "application/json" in response.headers.get("content-type", "")
